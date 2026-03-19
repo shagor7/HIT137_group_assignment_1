@@ -1,7 +1,17 @@
-limit = int(input("Enter a number (max 100): "))
+# Validate user input for a number between 1 and 100
+while True:
+    try:
+        limit = int(input("Enter a number (max 100): "))
+        if 1 <= limit <= 100:
+            break
+        else:
+            print("Please enter a number between 1 and 100.")
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
 
 primes = []
 
+# Check for prime numbers from 2 to the given limit
 for num in range(2, limit + 1):
     is_prime = True
 # loop from 2 to the given limit, because 0 and 1 are not prime numbers.
